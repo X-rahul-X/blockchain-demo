@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlockChain demo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="block">
+        <div class="data-div">
+          <label for="data">DATA:</label>
+          <input
+            class="data"
+            type="text"
+            name="data"
+            value="Welcome blockchain demo"
+          />
+        </div>
+        <div class="prev-div">
+          <label for="prev">prev.HASH</label>
+          <input class="prev" type="text" name="prev" value="0" readonly
+          style="background-color: rgba(123, 113, 113, 0.455); color:white"/ >
+        </div>
+        <div class="next-div">
+          <label for="next">next.HASH</label>
+          <input
+            class="next"
+            type="text"
+            name="next"
+            value="000e26ba9aaf4ab34d3badefd73cda6031097f7524fe24bfbcf512d08f618950"
+            readonly
+            style="background-color: rgba(123, 113, 113, 0.455); color: white"
+          />
+        </div>
+        <input type="hidden" value="1" />
+        <button class="nonce">nonce</button>
+
+        <button class="addbtn">Add</button>
+      </div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.js"
+      integrity="sha512-8WAv/Z7UaDv0U1DCJ3W1oul76HOvq2/9mc+IbOZGsTj9iwZnnCXL/0FS6GQKNR++krdfVn9kuAAQ6v2DqZ9uEQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>

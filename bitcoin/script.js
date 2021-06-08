@@ -147,19 +147,11 @@ const input_listener = function (arg) {
       }
       const block_salt = object_array[magic_number - 1].salt;
       let { hash, salt } = hash_checker(block_data, block_prev, block_salt);
-      // console.log("hasharray:", hash_array);
-      // console.log("block_hash:", block_hash);
-      // console.log("hash:", hash);
-      // console.log("hash array:", hash_array);
-      // console.log("block_hash:", block_hash);
-      // console.log("hash:", hash);
-      // console.log("objectarray:", object_array[magic_number - 1]);
       if (
         magic_number == 1 &&
         e.target.value == object_array[magic_number - 1].data
       ) {
         hash = block_hash;
-        // object_array[magic_number - 1].hash = hash;
       }
       // ###########################
       if (block_hash == hash) {
@@ -174,7 +166,6 @@ const input_listener = function (arg) {
         const blocks_in_dom = document.querySelectorAll(".block");
         for (let i = magic_number; i < blocks.length; i++) {
           block_changer(blocks[i - 1], blocks_in_dom[i - 1]);
-          // genisis.style.backgroundColor = "yellow";
         }
       }
     }

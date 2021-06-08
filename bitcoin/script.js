@@ -75,7 +75,6 @@ const nonce_listener = function (arg) {
       hash_array[magic_number] = hash;
       console.log(object_array);
     }
-
     blocks_in_dom[magic_number - 1].style.backgroundColor =
       "rgba(74, 181, 74, 0.537)";
   });
@@ -103,6 +102,8 @@ const block_defaulter = (block, block_in_dom) => {
       blocks[indexofblockinBlocks].children[1].childNodes[3].value == "0"
     ) {
       blocks[indexofblockinBlocks].children[1].childNodes[3].value = "0";
+      blocks[indexofblockinBlocks + 1].children[1].childNodes[3].value =
+        blocks[indexofblockinBlocks].children[2].childNodes[3].value;
     } else {
       blocks[indexofblockinBlocks].children[1].childNodes[3].value =
         object_array[indexofblockinBlocks].prev.hash;

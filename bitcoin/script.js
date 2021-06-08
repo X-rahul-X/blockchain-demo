@@ -87,17 +87,16 @@ const block_defaulter = (block, block_in_dom) => {
   const indexofblockinBlocks = blocks.indexOf(block);
   let block_data = block.children[0].childNodes[3].value;
   let block_prev = block.children[1].childNodes[3].value;
+
+  blocks[indexofblockinBlocks].children[2].childNodes[3].value =
+    object_array[indexofblockinBlocks].hash;
   let block_hash = block.children[2].childNodes[3].value;
   console.log("block_hash:", block_hash);
   console.log(
     "object thingy:",
     object_array[indexofblockinBlocks].next[1].childNodes[3].value
   );
-  if (
-    block_hash ==
-      object_array[indexofblockinBlocks].next[1].childNodes[3].value &&
-    block_data == object_array[indexofblockinBlocks].data
-  ) {
+  if (block_hash == object_array[indexofblockinBlocks].hash) {
     if (
       blocks[indexofblockinBlocks].children[1].childNodes[3].value ==
         "undefined" ||
@@ -107,9 +106,10 @@ const block_defaulter = (block, block_in_dom) => {
     } else {
       blocks[indexofblockinBlocks].children[1].childNodes[3].value =
         object_array[indexofblockinBlocks].prev.hash;
+      blocks[indexofblockinBlocks + 1].children[1].childNodes[3].value =
+        blocks[indexofblockinBlocks].children[2].childNodes[3].value;
     }
-    blocks[indexofblockinBlocks].children[2].childNodes[3].value =
-      object_array[indexofblockinBlocks].hash;
+
     block_in_dom.style.backgroundColor = "rgba(74, 181, 74, 0.537)";
   }
 };
@@ -161,7 +161,6 @@ const input_listener = function (arg) {
         // object_array[magic_number - 1].hash = hash;
       }
       // ###########################
-
       if (block_hash == hash) {
         const blocks_in_dom = document.querySelectorAll(".block");
         for (let i = magic_number; i < blocks.length; i++) {

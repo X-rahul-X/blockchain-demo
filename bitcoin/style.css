@@ -1,16 +1,22 @@
-body {
-  background-color: #d72323d9;
+html {
+  background-image: linear-gradient(to bottom right, #108ce42f, #3a4750);
+}
+.heading:hover {
+  color: rgb(0, 0, 0);
+  transition: color 2s ease-in-out;
+}
+.heading:hover {
+  color: rgba(8, 7, 7, 0.694);
+  transition: color 2s ease-in-out;
 }
 .container {
   display: flex;
   flex-wrap: wrap;
   flex: 1;
-  margin: 10px;
+  margin-bottom: 125px;
   padding: 20px;
-  background-color: #3a4750;
-  border-radius: 50px;
-
-  /* position: relative; */
+  background-image: linear-gradient(to bottom right, #108ce42f, #3a4750);
+  border-radius: 20px;
 }
 
 input {
@@ -28,7 +34,7 @@ input {
   justify-content: center;
   height: 300px;
   width: 300px;
-  background-color: rgba(74, 181, 74, 0.537);
+  background-image: linear-gradient(to bottom right, #108ce42f, #3a4750);
   margin: 50px;
   border-radius: 20px;
   padding: 10px;
@@ -43,10 +49,10 @@ button {
   width: 50%;
 }
 button:hover {
-  background-color: #d72323;
+  background-image: linear-gradient(to bottom right, #108ce42f, #3a4750);
   opacity: 0.7;
   color: #eeeeee;
-  transition: background-color, opacity 1s ease-in-out;
+  transition: background-image, opacity 1s ease-in-out;
 }
 
 @media (max-width: 600px) {

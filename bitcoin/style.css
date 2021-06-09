@@ -14,7 +14,7 @@ html {
   display: flex;
   flex-wrap: wrap;
   flex: 1;
-  margin-bottom: 140px;
+  margin-bottom: 160px;
   padding: 20px;
   background-image: linear-gradient(to bottom right, #108ce42f, #3a4750);
   border-radius: 20px;

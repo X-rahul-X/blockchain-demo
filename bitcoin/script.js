@@ -25,9 +25,8 @@ const hash_checker = function (data, prev, salt = Math.random()) {
     let counter = 1;
     while (true) {
       if (hash.substr(0, 3) == "000") {
-        // console.log("sha_hash:", hash);
+        console.log("Nonce:", counter);
         const salt = new_obj.salt;
-        // console.log(hash, salt);
         return { hash, salt };
       } else {
         new_obj.salt = Math.random();
@@ -73,7 +72,6 @@ const nonce_listener = function (arg) {
       object_array[magic_number - 1].salt = salt;
       // #######################################################
       hash_array[magic_number] = hash;
-      console.log(object_array);
     }
     blocks_in_dom[magic_number - 1].style.backgroundColor =
       "rgba(74, 181, 74, 0.537)";
@@ -90,11 +88,7 @@ const block_defaulter = (block, block_in_dom) => {
   blocks[indexofblockinBlocks].children[2].childNodes[3].value =
     object_array[indexofblockinBlocks].hash;
   let block_hash = block.children[2].childNodes[3].value;
-  console.log("block_hash:", block_hash);
-  console.log(
-    "object thingy:",
-    object_array[indexofblockinBlocks].next[1].childNodes[3].value
-  );
+
   if (block_hash == object_array[indexofblockinBlocks].hash) {
     if (
       blocks[indexofblockinBlocks].children[1].childNodes[3].value ==
@@ -123,7 +117,6 @@ const block_changer = (block, block_in_dom) => {
   const hash = sha256(String(Math.random()));
   blocks[indexofblockinBlocks].children[2].childNodes[3].value = hash;
   blocks[indexofblockinBlocks + 1].children[1].childNodes[3].value = hash;
-  // console.log(block_data, block_prev, block_hash);
 };
 // #################################################################
 const input_listener = function (arg) {
@@ -160,7 +153,6 @@ const input_listener = function (arg) {
           block_defaulter(blocks[i - 1], blocks_in_dom[i - 1]);
         }
         // ############################################### leave
-        console.log("success they are equal");
         // ################################################
       } else {
         const blocks_in_dom = document.querySelectorAll(".block");
@@ -223,7 +215,6 @@ AddClone = function () {
   blocks.push(clone);
   container.append(clone);
   input_listener(clone_data.children[1]);
-  console.log(object_array);
 };
 // listener attachments#####################################..$$$$$$$$$$$$$$$$$$$$$$$$$
 Addbtn.addEventListener("click", AddClone);

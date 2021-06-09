@@ -1,8 +1,9 @@
 html {
   background-image: linear-gradient(to bottom right, #108ce42f, #3a4750);
 }
-.heading:hover {
-  color: rgb(0, 0, 0);
+.heading {
+  font-family: "Staatliches", cursive;
+  color: linear-gradient(to bottom right, #108ce42f, #3a4750);
   transition: color 2s ease-in-out;
 }
 .heading:hover {
@@ -57,10 +58,14 @@ button:hover {
 
 @media (max-width: 600px) {
   .container {
-    margin: 0;
+    margin-bottom: 220px;
     padding: 0;
   }
   .block {
     width: 400px;
+    font-size: small;
+  }
+  input {
+    width: 80%;
   }
 }

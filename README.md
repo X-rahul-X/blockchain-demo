@@ -1,2 +1,2 @@
 # blockchain-demo
-[check the demo](https://x-rahul-x.github.io/blockchain-demo/bitcoin/index.html)
+[check the demo](https://iamrahulrnair.github.io/blockchain-demo/bitcoin/index.html)

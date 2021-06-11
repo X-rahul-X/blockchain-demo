@@ -79,7 +79,7 @@ const nonce_listener = function (arg) {
         object_array[magic_number - 1].hash =
           blocks[magic_number - 1].children[2].childNodes[3].value;
         object_array[magic_number - 1].salt = salt;
-        hash_array[magic_number] = hash;
+        hash_array[magic_number - 1] = hash;
         blocks_in_dom[magic_number - 1].style.backgroundColor =
           "rgba(74, 181, 74, 0.537)";
       }
